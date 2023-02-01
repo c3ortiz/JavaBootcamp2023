@@ -1,4 +1,4 @@
-import javax.lang.model.util.ElementScanner14;
+import java.text.DecimalFormat;
 
 public class CafeJava {
     public static void main(String[] args) {
@@ -24,16 +24,18 @@ public class CafeJava {
         // Finalizaciones de pedidos (agrega las tuyas a continuación)
         boolean estaListoOrden1 = false;
         boolean estaListoOrden2 = true;
-        boolean estaListoOrden3 = false;
+        boolean estaListoOrden3 = true;
         boolean estaListoOrden4 = false;
 
         // SIMULACIÓN DE INTERACCIÓN DE APP(Agrega tu código para los desafíos a
         // continuación)
         // Ejemplo:
+        System.out.println("EJEMPLO:");
         System.out.println(saludoGeneral + cliente1); // Muestra "Bienvenido a Café Java, Cindhuri"
 
         // ** Las sentencias print sobre las interacciones con el cliente irán aquí **
         // Simulación 1
+        System.out.println("SIMULACI\u00d3N 1:");
         System.out.println(saludoGeneral + cliente1);
         if (estaListoOrden1) {
             System.out.println(cliente1 + mensajeListo);
@@ -43,13 +45,28 @@ public class CafeJava {
         }
 
         // Simulación 2
-        System.out.println(saludoGeneral + cliente2);
+        System.out.println("SIMULACI\u00d3N 2:");
+        System.out.println(saludoGeneral + cliente4);
         if (estaListoOrden2) {
-            System.out.println(cliente2 + mensajeListo);
+            System.out.println(cliente4 + mensajeListo);
             System.out.println(mensajeMostrarTotal + precioCapuchino + " USD");
         } else {
-            System.out.println(cliente2 + mensajePendiente);
+            System.out.println(cliente4 + mensajePendiente);
         }
+
+        // Simulación 3
+        System.out.println("SIMULACI\u00d3N 3:");
+        System.out.println(mensajeMostrarTotal + (precioCafeConLeche * 2) + " USD");
+        if (estaListoOrden3)
+            System.out.println(cliente2 + mensajeListo);
+        else
+            System.out.println(cliente2 + mensajePendiente);
+
+        // Simulación 3
+        System.out.println("SIMULACI\u00d3N 4:");
+        System.out
+                .println(
+                        mensajeMostrarTotal + (precioCafeConLeche - precioCafeDeFiltro) + " USD");
 
     }
 }
