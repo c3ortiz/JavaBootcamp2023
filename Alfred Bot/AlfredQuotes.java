@@ -1,5 +1,5 @@
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
 
 public class AlfredQuotes {
 
@@ -9,17 +9,26 @@ public class AlfredQuotes {
     }
 
     public String guestGreeting(String name, String dayPeriod) {
-        return String.format("Buenas %1$s, %2$s. Encantado de verte", dayPeriod, name);
+        return String.format("Buenas %s, %s. Encantado de verte", dayPeriod, name);
     }
 
-    // public String guestGreeting() {
-    // return String.format("Buenas %1$s, %2$s. Encantado de verte", dayPeriod,
-    // name);
-    // }
+    public String guestGreeting(String name) {
+        Calendar calendario = Calendar.getInstance();
+        int HH = calendario.get(Calendar.HOUR_OF_DAY);
+
+        if ((HH >= 0) && (HH < 12)) {
+            return String.format("Buenas d\u00edas %s. Encantado de verte", name);
+        } else if ((HH >= 12) && (HH < 17)) {
+            return String.format("Buenas tardes %s. Encantado de verte", name);
+        } else if ((HH >= 18) && (HH < 23)) {
+            return String.format("Buenas noches %s. Encantado de verte", name);
+        } else {
+            return "Hora no es válida";
+        }
+    }
 
     public String dateAnnouncement() {
-        String dateTime = DateTimeFormatter.ofPattern("MMM dd yyyy, hh:mm:ss a").format(LocalDateTime.now());
-        return String.format("Actualmente es %s", dateTime);
+        return String.format("Actualmente es %s", new Date());
     }
 
     public String respondBeforeAlexis(String conversation) {
