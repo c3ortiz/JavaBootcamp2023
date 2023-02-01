@@ -10,7 +10,7 @@ public class AlfredTest {
 
         // Haz algunos saludos de prueba, proporcionando los datos necesarios
         String testGreeting = alfredBot.basicGreeting();
-        String testGuestGreeting = alfredBot.guestGreeting("Beth Pepe", "Tarde");
+        String testGuestGreeting = alfredBot.guestGreeting("Beth Pepe", "Tardes");
         String testDateAnnouncement = alfredBot.dateAnnouncement();
 
         String alexisTest = alfredBot.respondBeforeAlexis(
@@ -19,6 +19,8 @@ public class AlfredTest {
                 "No puedo encontrar mi yo-yo. Quizás Alfred sepa dónde está");
         String notRelevantTest = alfredBot.respondBeforeAlexis(
                 "Quizás de eso se trata Batman. No de ganar. Si no que de fallar...");
+
+        String angryAlfred = alfredBot.alfredIsAngry("Tengo mucho malgenio");
 
         // Imprime los saludos para probar.
         System.out.println(testGreeting);
@@ -29,5 +31,6 @@ public class AlfredTest {
         System.out.println(alexisTest);
         System.out.println(alfredTest);
         System.out.println(notRelevantTest);
+        System.out.println(angryAlfred);
     }
 }

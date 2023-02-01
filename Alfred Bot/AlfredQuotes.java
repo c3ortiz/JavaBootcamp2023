@@ -1,4 +1,3 @@
-import java.util.Date;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -10,8 +9,13 @@ public class AlfredQuotes {
     }
 
     public String guestGreeting(String name, String dayPeriod) {
-        return String.format("Hola, %s. Encantad¿o de verte", name);
+        return String.format("Buenas %1$s, %2$s. Encantado de verte", dayPeriod, name);
     }
+
+    // public String guestGreeting() {
+    // return String.format("Buenas %1$s, %2$s. Encantado de verte", dayPeriod,
+    // name);
+    // }
 
     public String dateAnnouncement() {
         String dateTime = DateTimeFormatter.ofPattern("MMM dd yyyy, hh:mm:ss a").format(LocalDateTime.now());
@@ -32,9 +36,8 @@ public class AlfredQuotes {
         }
     }
 
-    // BONUS NINJA
-    // Ver las especificaciones para sobrecargar el método guessGreeting
-    // BONUS SENSEI
-    // ¡Escribe tu propio método AlfredQuotes usando cualquiera de los métodos
-    // String que has aprendido!
+    public String alfredIsAngry(String sentence) {
+        return sentence.toUpperCase();
+    }
+
 }
