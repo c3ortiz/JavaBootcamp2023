@@ -32,6 +32,21 @@ public class CafeUtil {
         }
     }
 
+    public boolean displayMenu(ArrayList<String> menuItems, ArrayList<Double> prices) {
+        String pattern = "$###,###.###";
+        DecimalFormat decimalFormat = new DecimalFormat(pattern);
+
+        if (menuItems.size() == prices.size()) {
+            for (int i = 0; i < menuItems.size(); i++) {
+                String formattedNumber = decimalFormat.format(prices.get(i));
+                System.out.printf("%s %s -- %s\n", i, menuItems.get(i), formattedNumber);
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public void addCustomer(ArrayList<String> customers) {
         System.out.println("Por favor, ingresa tu nombre:");
         String userName = System.console().readLine();
@@ -41,12 +56,6 @@ public class CafeUtil {
         customers.add(userName);
 
         System.out.println(customers);
-    }
-
-    static public void customFormat(String pattern, double value) {
-        DecimalFormat myFormatter = new DecimalFormat(pattern);
-        String output = myFormatter.format(value);
-        System.out.println(value + "  " + pattern + "  " + output);
     }
 
     public void printPriceChart(String product, double price, int maxQuantity) {
@@ -64,5 +73,13 @@ public class CafeUtil {
 
             System.out.printf("%s - %s \n", i + 1, formattedNumber);
         }
+    }
+
+    public String addCustomers(ArrayList<String> customers) {
+        System.out.println("Por favor, ingresa el nombre del cliente a ingresar (escribe 'q' si ya terminaste): ");
+        String userName = System.console().readLine();
+        customers.add(userName);
+
+        return userName;
     }
 }

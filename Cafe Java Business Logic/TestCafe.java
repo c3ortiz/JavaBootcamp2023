@@ -17,22 +17,38 @@ public class TestCafe {
 
         System.out.println("----- Prueba Mostrar Men\u00fa -----");
 
-        ArrayList<String> menu = new ArrayList<String>();
-        menu.add("Caf\u00e9 de goteo");
-        menu.add("Capuchino");
-        menu.add("Latte");
-        menu.add("Moka");
-        appTest.displayMenu(menu);
+        ArrayList<String> menuItems = new ArrayList<String>();
+        menuItems.add("Caf\u00e9 de goteo");
+        menuItems.add("Capuchino");
+        menuItems.add("Latte");
+        menuItems.add("Moka");
+        appTest.displayMenu(menuItems);
+
+        ArrayList<Double> precios = new ArrayList<Double>();
+        precios.add(1200.0);
+        precios.add(3200.0);
+        precios.add(3600.0);
+        precios.add(3200.0);
 
         System.out.println("\n----- Prueba agregar cliente -----");
         ArrayList<String> customers = new ArrayList<String>();
 
         // --- Probar 4 veces ---
-        // for (int i = 0; i < 4; i++) {
-        // appTest.addCustomer(customers);
-        // System.out.println("\n");
-        // }
-        System.out.println("\n----- Bonus Ninja -----");
+        for (int i = 0; i < 4; i++) {
+            appTest.addCustomer(customers);
+            System.out.println("\n");
+        }
+
+        System.out.println("\n----- Bonus Ninja 1 -----");
         appTest.printPriceChart("Caf\u00e9 Colombiano Molido", 1000, 5);
+
+        System.out.println("\n----- Bonus Ninja 2 -----");
+        appTest.displayMenu(menuItems, precios);
+
+        System.out.println("\n----- Bonus Sensei -----");
+        while (!appTest.addCustomers(customers).equals("q")) {
+            appTest.addCustomers(customers);
+        }
+        System.out.println("Los clientes actuales son: " + customers);
     }
 }
