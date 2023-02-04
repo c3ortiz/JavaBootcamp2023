@@ -1,3 +1,6 @@
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class CafeUtil {
 
@@ -21,5 +24,40 @@ public class CafeUtil {
         }
 
         return totalOrden;
+    }
+
+    public void displayMenu(ArrayList<String> menuItems) {
+        for (int i = 0; i < menuItems.size(); i++) {
+            System.out.println(i + " " + menuItems.get(i));
+        }
+    }
+
+    public void addCustomer(ArrayList<String> customers) {
+        System.out.println("Por favor, ingresa tu nombre:");
+        String userName = System.console().readLine();
+
+        System.out.println("¡Hola, " + userName + "!");
+        System.out.println("Hay " + customers.size() + " personas frente a ti");
+        customers.add(userName);
+
+        System.out.println(customers);
+    }
+
+    static public void customFormat(String pattern, double value) {
+        DecimalFormat myFormatter = new DecimalFormat(pattern);
+        String output = myFormatter.format(value);
+        System.out.println(value + "  " + pattern + "  " + output);
+    }
+
+    public void printPriceChart(String product, double price, int maxQuantity) {
+        System.out.println(product);
+
+        String pattern = "$###,###.###";
+        DecimalFormat decimalFormat = new DecimalFormat(pattern);
+
+        for (int i = 0; i < maxQuantity; i++) {
+            String formattedNumber = decimalFormat.format(price * (i + 1));
+            System.out.printf("%s - %s \n", i + 1, formattedNumber);
+        }
     }
 }
