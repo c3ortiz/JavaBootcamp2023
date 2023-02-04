@@ -54,9 +54,14 @@ public class CafeUtil {
 
         String pattern = "$###,###.###";
         DecimalFormat decimalFormat = new DecimalFormat(pattern);
+        String formattedNumber = "";
 
         for (int i = 0; i < maxQuantity; i++) {
-            String formattedNumber = decimalFormat.format(price * (i + 1));
+            if (i > 0)
+                formattedNumber = decimalFormat.format((price * (i + 1)) - (400 * i));
+            else
+                formattedNumber = decimalFormat.format((price * (i + 1)));
+
             System.out.printf("%s - %s \n", i + 1, formattedNumber);
         }
     }

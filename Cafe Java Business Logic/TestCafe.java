@@ -33,6 +33,6 @@ public class TestCafe {
         // System.out.println("\n");
         // }
         System.out.println("\n----- Bonus Ninja -----");
-        appTest.printPriceChart("Caf\u00e9 Colombiano Molido", 12000, 5);
+        appTest.printPriceChart("Caf\u00e9 Colombiano Molido", 1000, 5);
     }
 }
