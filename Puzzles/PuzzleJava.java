@@ -36,11 +36,11 @@ public class PuzzleJava {
         return password;
     }
 
-    public ArrayList<String> getNewPasswordSet(int lenght) {
-        ArrayList<String> passwordSet = new ArrayList<String>(lenght);
+    public ArrayList<String> getNewPasswordSet(int length) {
+        ArrayList<String> passwordSet = new ArrayList<String>(length);
         String password = "";
 
-        for (int j = 0; j < lenght; j++) {
+        for (int j = 0; j < length; j++) {
             for (int i = 0; i < 8; i++) {
                 password += getRandomLetter();
             }
@@ -49,5 +49,16 @@ public class PuzzleJava {
         }
 
         return passwordSet;
+    }
+
+    public ArrayList<String> shuffleArray(ArrayList<String> initialArray) {
+        for (int i = initialArray.size() - 1; i >= 1; i--) {
+            int randomIndex = randMachine.nextInt(i + 1);
+            String getItem = initialArray.get(i);
+            initialArray.set(i, initialArray.get(randomIndex));
+            initialArray.set(randomIndex, getItem);
+        }
+
+        return initialArray;
     }
 }
