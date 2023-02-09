@@ -2,60 +2,41 @@ public class TestPedidos {
     public static void main(String[] args) {
 
         // Elementos del menú
-        Articulo articulo1 = new Articulo();
-        Articulo articulo2 = new Articulo();
-        Articulo articulo3 = new Articulo();
-        Articulo articulo4 = new Articulo();
-
-        articulo1.nombre = "Moka";
-        articulo1.precio = 1.1;
-        articulo2.nombre = "Latte";
-        articulo2.precio = 1.2;
-        articulo3.nombre = "Cafe de goteo";
-        articulo3.precio = 1.3;
-        articulo4.nombre = "Capuchino";
-        articulo4.precio = 1.4;
+        Articulo articulo1 = new Articulo("Moka", 1.1);
+        Articulo articulo2 = new Articulo("Latte", 1.2);
+        Articulo articulo3 = new Articulo("Cafe de goteo", 1.3);
+        Articulo articulo4 = new Articulo("Capuchino", 1.4);
 
         Pedido pedido1 = new Pedido();
         Pedido pedido2 = new Pedido();
-        Pedido pedido3 = new Pedido();
-        Pedido pedido4 = new Pedido();
 
-        pedido1.nombre = "Cindhuri";
-        pedido2.nombre = "Jimmy";
-        pedido3.nombre = "Noah";
-        pedido4.nombre = "Sam";
+        Pedido pedido3 = new Pedido("Pepa");
+        Pedido pedido4 = new Pedido("Pepe");
+        Pedido pedido5 = new Pedido("Pepi");
 
-        System.out.println(pedido1);
-        System.out.println(pedido1.total);
+        pedido1.addArticulo(articulo1);
+        pedido1.addArticulo(articulo2);
 
-        pedido2.items.add(articulo1);
-        pedido2.total += articulo1.precio;
+        pedido2.addArticulo(articulo3);
+        pedido2.addArticulo(articulo4);
 
-        pedido3.items.add(articulo4);
-        pedido3.total += articulo4.precio;
+        pedido3.addArticulo(articulo1);
+        pedido3.addArticulo(articulo3);
 
-        pedido4.items.add(articulo2);
-        pedido4.total += articulo2.precio;
+        pedido4.addArticulo(articulo2);
+        pedido4.addArticulo(articulo4);
 
-        pedido1.listo = !pedido1.listo;
+        pedido5.addArticulo(articulo1);
+        pedido5.addArticulo(articulo4);
 
-        pedido4.items.add(articulo2);
-        pedido4.items.add(articulo2);
-        pedido4.total += articulo2.precio;
-        pedido4.total += articulo2.precio;
+        pedido1.setListo(true);
+        pedido2.setListo(true);
+        pedido5.setListo(true);
 
-        pedido2.listo = !pedido2.listo;
-
-        // Ordenar variables -- orden1, orden2, etc.
-
-        // Simulaciones de aplicaciones
-        // Utiliza este código de ejemplo para probar las actualizaciones de varios
-        // pedidos
-        System.out.printf("Nombre: %s\n", pedido4.nombre);
-        System.out.printf("Total: %s\n", pedido4.total);
-        System.out.printf("Listo: %s\n", pedido4.listo);
-
-        System.out.println(pedido4.items);
+        pedido1.display();
+        pedido2.display();
+        pedido3.display();
+        pedido4.display();
+        pedido5.display();
     }
 }
