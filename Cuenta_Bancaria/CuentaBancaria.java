@@ -1,14 +1,19 @@
+import java.util.Random;
+
 public class CuentaBancaria {
     private String tipoCuenta = "";
     private double saldoCuentaCorriente = 0, saldoCuentaAhorros = 0;
     private static int numeroCuentasCreadas = 0;
     private static double saldoTotalCuentasCorriente = 0, saldoTotalCuentasAhorros = 0;
+    private Long numeroCuenta;
 
     public CuentaBancaria(String tipoCuenta) {
-        if (tipoCuenta.equals("CA") || tipoCuenta.equals("CC"))
+        if (tipoCuenta.equals("CA") || tipoCuenta.equals("CC")) {
             this.tipoCuenta = tipoCuenta;
-        else
+            System.out.println("Su numero de cuenta es: " + numeroCuenta());
+        } else {
             System.out.println("Tipo de cuenta invalido");
+        }
         numeroCuentasCreadas++;
     }
 
@@ -18,6 +23,10 @@ public class CuentaBancaria {
 
     public double getSaldoCuenta() {
         return (tipoCuenta.equals("CA")) ? saldoCuentaAhorros : saldoCuentaCorriente;
+    }
+
+    public Long getNumeroCuenta() {
+        return numeroCuenta;
     }
 
     public static double getSaldoTotalCuentasCorriente() {
@@ -54,5 +63,13 @@ public class CuentaBancaria {
                 System.out.println("Fondos insuficientes");
             }
         }
+    }
+
+    Random randMachine = new Random();
+
+    private Long numeroCuenta() {
+        numeroCuenta = randMachine.nextLong(1000000000L, 9999999999L);
+
+        return numeroCuenta;
     }
 }

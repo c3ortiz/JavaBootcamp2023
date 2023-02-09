@@ -19,12 +19,16 @@ public class TestCuentaBancaria {
 
         cuenta1.retirarDinero(100);
         System.out.println(cuenta1.getSaldoCuenta());
+        System.out.println(cuenta1.getNumeroCuenta());
         cuenta2.retirarDinero(250);
         System.out.println(cuenta2.getSaldoCuenta());
+        System.out.println(cuenta2.getNumeroCuenta());
         cuenta3.retirarDinero(300);
         System.out.println(cuenta3.getSaldoCuenta());
+        System.out.println(cuenta3.getNumeroCuenta());
         cuenta4.retirarDinero(400);
         System.out.println(cuenta4.getSaldoCuenta());
+        System.out.println(cuenta4.getNumeroCuenta());
 
         System.out.println(cuenta1.getSaldoTotalCuentasAhorros());
         System.out.println(cuenta1.getSaldoTotalCuentasCorriente());
