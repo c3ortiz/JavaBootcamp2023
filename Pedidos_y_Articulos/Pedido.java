@@ -38,15 +38,15 @@ public class Pedido {
         return listo ? "Tu pedido está listo" : "Gracias por esperar. Tu pedido estará listo pronto";
     }
 
-    public void display() {
-        System.out.println("Nombre cliente: " + this.nombre);
+    public void display(String name) {
+        System.out.println("Nombre cliente: " + name);
 
         for (int i = 0; i < articulos.size(); i++) {
-            System.out.println(articulos.get(i).getNombre() + " : $" + articulos.get(i).getPrecio());
+            System.out.println(articulos.get(i).getNombre() + " -- $" + articulos.get(i).getPrecio());
         }
 
         System.out.println(getOrderTotal());
-        System.out.println(getStatusMessage());
+        // System.out.println(getStatusMessage());
 
     }
 
@@ -57,6 +57,6 @@ public class Pedido {
             totalOrden += articulos.get(i).getPrecio();
         }
 
-        return "$" + totalOrden;
+        return "Total: $" + totalOrden;
     }
 }

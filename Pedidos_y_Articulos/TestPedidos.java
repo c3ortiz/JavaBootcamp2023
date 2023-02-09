@@ -33,10 +33,26 @@ public class TestPedidos {
         pedido2.setListo(true);
         pedido5.setListo(true);
 
-        pedido1.display();
-        pedido2.display();
-        pedido3.display();
-        pedido4.display();
-        pedido5.display();
+        pedido1.display("Pepa");
+        pedido2.display("Pepa");
+        pedido3.display("Pepa");
+        pedido4.display("Pepa");
+        pedido5.display("Pepa");
+
+        System.out.println("-------- Inicio PedidosKiosko -------");
+
+        PedidoKiosko pedidoKiosko = new PedidoKiosko();
+        pedidoKiosko.addMenuItem("banana", 1600);
+        pedidoKiosko.addMenuItem("cafe", 1200);
+        pedidoKiosko.addMenuItem("latte", 3600);
+        pedidoKiosko.addMenuItem("capuchino", 2400);
+        pedidoKiosko.addMenuItem("muffin", 3200);
+        pedidoKiosko.displayMenu();
+
+        pedidoKiosko.newOrder();
+
+        pedidoKiosko.addMenuItemByInput();
+        pedidoKiosko.displayMenu();
+
     }
 }
