@@ -9,7 +9,11 @@ public class TestConductor {
         pepe.conducir();
 
         pepe.utilizarPropulsores();
+        pepe.conducir();
+        pepe.utilizarPropulsores();
 
+        pepe.llenarGasolina();
+        pepe.llenarGasolina();
         pepe.llenarGasolina();
         pepe.llenarGasolina();
         pepe.llenarGasolina();
